@@ -21,6 +21,10 @@ public class BthCustom extends ConstraintLayout {
         super(context);
         init(null);
     }
+    public BthCustom(@NonNull Context context, @Nullable AttributeSet attrs) {
+        super(context, attrs);
+        init(null);
+    }
     public BthCustom(@NonNull Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         init(null);
