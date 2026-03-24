@@ -40,10 +40,16 @@ public class BthCustom extends ConstraintLayout {
         if(type == TypeButton.PRIMARY || type == TypeButton.ON) {
             Bth.setBackgroundResource(R.drawable.bth_primary);
             Bth.setTextColor(Color.parseColor("#FFFFFF"));
-        } else if(type == TypeButton.TETRTIARY) {
+        }
+        else if(type == TypeButton.SECONDARY) {
+            Bth.setBackgroundResource(R.drawable.bth_secondary);
+            Bth.setTextColor(Color.parseColor("#1A6FEE"));
+        }
+        else if(type == TypeButton.TETRTIARY) {
             Bth.setBackgroundResource(R.drawable.bth_tetriary);
             Bth.setTextColor(Color.parseColor("#2D2C2C"));
-        } else if(type == TypeButton.OFF) {
+        }
+        else if(type == TypeButton.OFF) {
             Bth.setBackgroundResource(R.drawable.bth_tetriary);
             Bth.setTextColor(Color.parseColor("#7E7E9A"));
         }
