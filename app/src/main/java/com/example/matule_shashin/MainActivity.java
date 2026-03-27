@@ -36,8 +36,6 @@ public class MainActivity extends AppCompatActivity {
         EtCustom etLastName = findViewById(R.id.etLastName);
         EtCustom etLastNameError = findViewById(R.id.etLastNameError);
 
-        // Исправленная инициализация полей
-        // Метод init(String labelText, String hintText, String value, TypeET type)
         etName.init("Укажите имя", "Иван", "", EtCustom.TypeET.DEFAULT);
         etLastName.init("Укажите фамилию", "Иванов", "", EtCustom.TypeET.DEFAULT);
         etLastNameError.init("Укажите email", "example@mail.com", "", EtCustom.TypeET.DEFAULT);

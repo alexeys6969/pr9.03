@@ -16,6 +16,7 @@ import com.example.uicomponents.R;
 public class EtCustom extends ConstraintLayout {
     public EditText Et;
     public TextView TvLabel;
+    public TextView TvError;
     private static final int DEFAULT_LAYOUT = R.layout.et; // Укажите ваш layout файл
     public enum TypeET {
         DEFAULT, HOVER, ERROR
@@ -40,6 +41,7 @@ public class EtCustom extends ConstraintLayout {
         LayoutInflater.from(this.getContext()).inflate(R.layout.et, this, true);
         Et = findViewById(R.id.et);
         TvLabel = findViewById(R.id.tv_label);
+        TvError = findViewById(R.id.tv_error);
     }
 
     public void init(String labelText, String hintText, String value, TypeET type) {
@@ -71,7 +73,7 @@ public class EtCustom extends ConstraintLayout {
         applyStyle(type);
     }
     public String getText() {
-        return Et != null ? Et.getText().toString() : "";
+        return Et != null ? Et.getText().toString().trim() : "";
     }
     public void setText(String text) {
         if (Et != null) {
@@ -79,14 +81,18 @@ public class EtCustom extends ConstraintLayout {
         }
     }
     public void setError(String errorMessage) {
-        if (Et != null) {
-            Et.setError(errorMessage);
+        if (Et != null && TvError != null) {
+            TvError.setText(errorMessage);
+            TvError.setTextColor(Color.RED);
+            TvError.setVisibility(VISIBLE);
             applyStyle(TypeET.ERROR);
         }
     }
+
     public void clearError() {
-        if (Et != null) {
-            Et.setError(null);
+        if (Et != null && TvError != null) {
+            TvError.setText("");
+            TvError.setVisibility(GONE);
             applyStyle(TypeET.DEFAULT);
         }
     }
